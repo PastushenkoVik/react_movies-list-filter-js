@@ -13,8 +13,8 @@ const getFilteredMovies = (movies, query) => {
 
   return movies.filter(
     movie =>
-      !!movie.title.toLowerCase().match(regex) ||
-      !!movie.description.toLowerCase().match(regex),
+      movie.title.toLowerCase().includes(query.trim().toLowerCase()) ||
+      movie.description.toLowerCase().includes(query.trim().toLowerCase())
   );
 };
 
@@ -52,5 +52,3 @@ export const App = () => {
     </div>
   );
 };
-
-
